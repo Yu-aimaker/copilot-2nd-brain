@@ -31,7 +31,7 @@ router.get('/thinking-history', async (req, res) => {
     const thinkingActions = await actionsQuery.limit(Number(limit));
 
     let reportsQuery = db.select().from(reports).orderBy(desc(reports.createdAt));
-    if (conditions.length > 0) {
+    if (startDate && endDate) {
       reportsQuery = reportsQuery.where(and(
         sql`${reports.createdAt} >= ${new Date(startDate as string)}`,
         sql`${reports.createdAt} <= ${new Date(endDate as string)}`

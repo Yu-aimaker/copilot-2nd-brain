@@ -268,7 +268,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 12,
-    gap: 8,
   },
   checkbox: {
     width: 24,
@@ -278,6 +277,7 @@ const styles = StyleSheet.create({
     borderColor: '#D1D5DB',
     justifyContent: 'center',
     alignItems: 'center',
+    marginRight: 8,
   },
   checkboxCompleted: {
     backgroundColor: '#3B82F6',
@@ -292,6 +292,7 @@ const styles = StyleSheet.create({
     width: 12,
     height: 12,
     borderRadius: 6,
+    marginRight: 8,
   },
   suggestionBadge: {
     backgroundColor: '#FEF3C7',
@@ -409,7 +410,6 @@ const styles = StyleSheet.create({
   },
   modalButtons: {
     flexDirection: 'row',
-    gap: 12,
     marginTop: 12,
   },
   button: {
@@ -417,6 +417,7 @@ const styles = StyleSheet.create({
     padding: 16,
     borderRadius: 12,
     alignItems: 'center',
+    marginLeft: 6,
   },
   cancelButton: {
     backgroundColor: '#F3F4F6',

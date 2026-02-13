@@ -280,13 +280,13 @@ const styles = StyleSheet.create({
   },
   modalButtons: {
     flexDirection: 'row',
-    gap: 12,
   },
   button: {
     flex: 1,
     padding: 16,
     borderRadius: 12,
     alignItems: 'center',
+    marginLeft: 6,
   },
   cancelButton: {
     backgroundColor: '#F3F4F6',
