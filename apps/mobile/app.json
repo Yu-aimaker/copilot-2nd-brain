@@ -1,0 +1,26 @@
+{
+  "expo": {
+    "name": "2nd Brain",
+    "slug": "second-brain",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "secondbrain",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "backgroundColor": "#FFFFFF"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.secondbrain.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.secondbrain.app"
+    },
+    "plugins": ["expo-router"]
+  }
+}
