@@ -44,7 +44,7 @@ export const sourcesRouter = router({
       
       await ctx.db.insert(sources).values(newSource);
       
-      return { id, ...newSource };
+      return newSource;
     }),
 
   // Get all sources with optional filters
