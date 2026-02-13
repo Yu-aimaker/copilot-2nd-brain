@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "@copilot-2nd-brain/shared": ["../../packages/shared/src"],
+      "@copilot-2nd-brain/server/trpc": ["../../apps/server/src/trpc/router"]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts"
+  ]
+}

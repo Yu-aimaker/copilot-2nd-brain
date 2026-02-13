@@ -1,0 +1,27 @@
+{
+  "name": "copilot-2nd-brain",
+  "version": "1.0.0",
+  "private": true,
+  "description": "2nd Brain - 知的ログ拡張アプリ",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:server": "npm run dev --workspace=apps/server",
+    "dev:mobile": "npm run start --workspace=apps/mobile",
+    "dev:mcp": "npm run dev --workspace=apps/mcp-server",
+    "build": "npm run build --workspaces",
+    "db:generate": "npm run db:generate --workspace=apps/server",
+    "db:migrate": "npm run db:migrate --workspace=apps/server",
+    "db:studio": "npm run db:studio --workspace=apps/server"
+  },
+  "keywords": [
+    "second-brain",
+    "knowledge-management",
+    "react-native",
+    "expo"
+  ],
+  "author": "",
+  "license": "MIT"
+}
