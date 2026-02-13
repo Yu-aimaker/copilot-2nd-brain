@@ -1,0 +1,20 @@
+{
+  "name": "copilot-2nd-brain",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "mobile": "yarn workspace @2nd-brain/mobile start",
+    "server": "yarn workspace @2nd-brain/server dev",
+    "build:mobile": "yarn workspace @2nd-brain/mobile build",
+    "build:server": "yarn workspace @2nd-brain/server build",
+    "typecheck": "yarn workspaces foreach -A run typecheck"
+  },
+  "devDependencies": {
+    "typescript": "5.9.0"
+  },
+  "packageManager": "yarn@4.0.0"
+}
