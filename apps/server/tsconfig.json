@@ -3,7 +3,9 @@
   "compilerOptions": {
     "outDir": "./dist",
     "rootDir": "./src",
+    // Node16 module resolution is required for Node.js server compatibility
     "moduleResolution": "Node16",
+    // CommonJS module format for Node.js runtime
     "module": "CommonJS"
   },
   "include": ["src/**/*"]
