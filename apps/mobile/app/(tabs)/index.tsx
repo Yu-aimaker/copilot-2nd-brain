@@ -121,8 +121,6 @@ export default function HomeScreen() {
           </View>
         )}
       </ScrollView>
-
-      <FloatingActionButton onPress={() => {/* TODO: Open quick save sheet */}} />
     </SafeAreaView>
   );
 }

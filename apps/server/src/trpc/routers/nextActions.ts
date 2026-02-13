@@ -16,17 +16,17 @@ export const nextActionsRouter = router({
       })
     )
     .query(async ({ ctx, input }) => {
-      const query = ctx.db
-        .select()
-        .from(nextActions)
+      let query = ctx.db.select().from(nextActions);
+      
+      if (input.status) {
+        query = query.where(eq(nextActions.status, input.status)) as any;
+      }
+      
+      const result = await query
         .orderBy(desc(nextActions.createdAt))
         .limit(input.limit);
       
-      if (input.status) {
-        query.where(eq(nextActions.status, input.status));
-      }
-      
-      return await query;
+      return result;
     }),
 
   // Get highlight (most important) next action
