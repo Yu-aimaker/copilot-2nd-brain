@@ -26,15 +26,23 @@ export default function RecordScreen() {
     onSuccess: () => sourcesQuery.refetch(),
   });
 
+  // Normalize a date value to YYYY-MM-DD
+  const toDateString = (value: unknown): string | undefined => {
+    if (!value) return undefined;
+    const d = new Date(value as string | number);
+    if (isNaN(d.getTime())) return undefined;
+    return d.toISOString().split("T")[0];
+  };
+
   // Filter sources for selected date
-  const sourcesForDate = (sourcesQuery.data ?? []).filter((s) =>
-    s.createdAt?.toString().startsWith(selectedDate)
+  const sourcesForDate = (sourcesQuery.data ?? []).filter(
+    (s) => toDateString(s.createdAt) === selectedDate
   );
 
   // Build marked dates
   const markedDates: Record<string, any> = {};
   for (const s of sourcesQuery.data ?? []) {
-    const date = s.createdAt?.toString().split("T")[0];
+    const date = toDateString(s.createdAt);
     if (date) {
       markedDates[date] = {
         marked: true,

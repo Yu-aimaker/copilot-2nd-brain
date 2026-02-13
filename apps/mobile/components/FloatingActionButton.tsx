@@ -39,10 +39,16 @@ export function FloatingActionButton({ onSave }: Props) {
 
   const handleSave = () => {
     if (!title.trim() || !content.trim()) return;
-    onSave({ type: selectedType, title: title.trim(), content: content.trim() });
-    setTitle("");
-    setContent("");
+    const data = { type: selectedType, title: title.trim(), content: content.trim() };
     setVisible(false);
+    try {
+      onSave(data);
+      setTitle("");
+      setContent("");
+    } catch {
+      // Re-open modal so the user can retry
+      setVisible(true);
+    }
   };
 
   return (

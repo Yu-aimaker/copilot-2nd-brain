@@ -60,11 +60,17 @@ export async function suggestActions(): Promise<AIActionSuggestion[]> {
  * Generate a periodic report (daily / weekly / monthly).
  */
 export async function generateReport(type: ReportType) {
+  const limitByType: Record<ReportType, number> = {
+    daily: 10,
+    weekly: 30,
+    monthly: 100,
+  };
+
   const recentSources = await db
     .select()
     .from(sources)
     .orderBy(desc(sources.createdAt))
-    .limit(type === "daily" ? 10 : type === "weekly" ? 30 : 100);
+    .limit(limitByType[type]);
 
   // TODO: Replace with actual LLM report generation
   return {

@@ -21,14 +21,9 @@ export const actionRouter = router({
     )
     .query(async ({ input }) => {
       const { limit = 50, status } = input ?? {};
-      let query = db
-        .select()
-        .from(actions)
-        .orderBy(desc(actions.createdAt))
-        .limit(limit);
 
       if (status) {
-        query = db
+        return db
           .select()
           .from(actions)
           .where(eq(actions.status, status))
@@ -36,7 +31,11 @@ export const actionRouter = router({
           .limit(limit);
       }
 
-      return query;
+      return db
+        .select()
+        .from(actions)
+        .orderBy(desc(actions.createdAt))
+        .limit(limit);
     }),
 
   /** Update action status */

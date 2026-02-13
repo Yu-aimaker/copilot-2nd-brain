@@ -92,7 +92,7 @@ export default function SourceDetailScreen() {
         )}
 
         {/* Tags */}
-        {(source.tags as string[])?.length > 0 && (
+        {source.tags?.length > 0 && (
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Tags</Text>
             <View style={styles.tags}>
